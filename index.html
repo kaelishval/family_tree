@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
+<!DOCT
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -30,3 +37,10 @@ and open the template in the editor.
         </script>
     </body>
 </html>
+
+<?php 
+}else{
+     header("Location: index.php");
+     exit();
+}
+ ?>
