@@ -7,23 +7,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-     <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="jquery-ui.css"/>
-        <script src="jquery-1.11.0.js"></script>
-        <script src="jquery-ui.js"></script>
-        <script src="ps-family.js"></script>
-        <link rel="stylesheet" href="treestyle.css"/>
+	<title>HOME</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
- --><!------ Include the above in your HEAD tag ---------->
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<body>
+<body class="home">
     <div class="container-fluid display-table">
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
@@ -34,7 +27,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="HomePage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
                         <!-- <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li> -->
                         <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
                         <li><a href="googlemap.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
@@ -58,16 +51,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </button>
                                 </div>
                             </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
-                            </div>
+                           
                         </div>
-                        
                         <div class="col-md-5">
-                        
                             <div class="header-rightside">
                                 <ul class="list-inline header-top pull-right">
-                                    <!-- <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Family</a></li> -->
+                                    <!-- <li class="hidden-xs"><a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a></li> -->
                                     <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
                                     <li>
                                         <a href="#" class="icon-info">
@@ -81,14 +70,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>Test Name</span>
+                                                    <span>JS Krishna</span>
                                                     <p class="text-muted small">
-                                                        test@name.com
+                                                        me@jskrishna.com
                                                     </p>
                                                     <div class="divider">
                                                     </div>
                                                     <a href="#" class="view btn-sm active">View Profile</a>
-                                                    <a href="logout.php" class="view btn-sm active">Logout</a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -98,27 +86,57 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         </div>
                     </header>
                 </div>
-                
-                <div class="user-dashboard">
-                        <!--  <input type="button" id="sendData" value="send data" onclick="$.send_Family({url: 'save_family.php'})"/> -->
-        <div id="pk-family-tree">
-        </div>
-        <script>
-            $('#pk-family-tree').pk_family();
-          /*  $('#pk-family-tree').pk_family_create(
-             {
-             data: '{"li0":{"a0":{"name":"1","age":"wewe","gender":"Male","pic":"images/profile.png"},"a1":{"name":"2","age":"23","gender":"Female","relation":"Spouse","pic":"images/profile-f.png"},"ul":{"li0":{"a0":{"name":"3","age":"34","gender":"Male","relation":"Child","pic":"images/profile.png"}},"li1":{"a0":{"name":"4","age":"34","gender":"Female","relation":"Child","pic":"images/profile-f.png"}}}}}'
-             }
-             );*/
-           
-        </script>
-                    </div>
-                </div>
-               
+                <div class="user-dashboard"><!-- asdasd -->
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Our Team Section</title>
+	<link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <h1>Our Team</h1>
+  <div class="team">
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/kael.jpg" alt="Team_image">
+      </div>
+      <h3>Karl Michael Mauro</h3>
+      <p class="role">UI developer</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+    </div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/louis.png" alt="Team_image">
+      </div>
+      <h3>Louis Arcilla</h3>
+      <p class="role">Tester</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/van.jpg" alt="Team_image">
+      </div>
+      <h3>Van Coke Velasquez</h3>
+      <p class="role">Support Lead</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+    </div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/tope.png" alt="Team_image">
+      </div>
+      <h3>Christoph Carreon</h3>
+      <p class="role">CEO</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
+  </div>
+</div>	
+
+</body>
+</html>
+                </div><!-- asdasd -->
             </div>
-            
         </div>
-         
 
     </div>
 

@@ -8,129 +8,90 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <html>
 <head>
     <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: #eee;
-  color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.calendar {
-  width: 45rem;
-  height: 52rem;
-  background-color: #222227;
-  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
-}
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
 
 .month {
+  padding: 70px 25px;
   width: 100%;
-  height: 12rem;
-  background-color: #5584ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+  background: #1abc9c;
   text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
-.month i {
-  font-size: 2.5rem;
-  cursor: pointer;
+.month ul {
+  margin: 0;
+  padding: 0;
 }
 
-.month h1 {
-  font-size: 3rem;
-  font-weight: 400;
+.month ul li {
+  color: white;
+  font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 1rem;
+  letter-spacing: 3px;
 }
 
-.month p {
-  font-size: 1.6rem;
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
 }
 
 .weekdays {
-  width: 100%;
-  height: 5rem;
-  padding: 0 0.4rem;
-  display: flex;
-  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ddd;
 }
 
-.weekdays div {
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  width: calc(44.2rem / 7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
 }
 
 .days {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0.2rem;
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
 }
 
-.days div {
-  font-size: 1.4rem;
-  margin: 0.3rem;
-  width: calc(40.2rem / 7);
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
-  transition: background-color 0.2s;
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
 }
 
-.days div:hover:not(.today) {
-  background-color: #5584ff;
-  border: 0.2rem solid #5584ff;
-  cursor: pointer;
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
 }
 
-.prev-date,
-.next-date {
-  opacity: 0.5;
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
 }
 
-.today {
-  background-color: #5584ff;
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
 }
 </style>
-  <title>HOME</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+	<title>HOME</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -154,7 +115,7 @@ html {
                         <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
                         <li><a href="googlemap.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
                         <li class="active"><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
-                        <li><a href="setting.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                        <li class="active"><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -189,7 +150,7 @@ html {
                                         </a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i>
                                             <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -211,32 +172,60 @@ html {
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <div class="container">
-      <div class="calendar">
-        <div class="month">
-          <i class="fas fa-angle-left prev"></i>
-          <div class="date">
-            <h1></h1>
-            <p></p>
-          </div>
-          <i class="fas fa-angle-right next"></i>
-        </div>
-        <div class="weekdays">
-          <div>Sun</div>
-          <div>Mon</div>
-          <div>Tue</div>
-          <div>Wed</div>
-          <div>Thu</div>
-          <div>Fri</div>
-          <div>Sat</div>
-        </div>
-        <div class="days"></div>
-      </div>
-    </div>
+                    <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      November<br>
+      <span style="font-size:18px">2020</span>
+    </li>
+  </ul>
+</div>
 
-    <script src="script.js"></script>
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
 
-    <!-- STOP HERE -->
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li><span class="active">29</span></li>
+  <li>30</li>
+  <li>31</li>
+</ul>
 
                 </div>
             </div>
@@ -273,90 +262,7 @@ html {
 
 </body>
 </html>
-<script type="text/javascript">
-  const date = new Date();
 
-const renderCalendar = () => {
-  date.setDate(1);
-
-  const monthDays = document.querySelector(".days");
-
-  const lastDay = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDate();
-
-  const prevLastDay = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    0
-  ).getDate();
-
-  const firstDayIndex = date.getDay();
-
-  const lastDayIndex = new Date(
-    date.getFullYear(),
-    date.getMonth() + 1,
-    0
-  ).getDay();
-
-  const nextDays = 7 - lastDayIndex - 1;
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
-
-  let days = "";
-
-  for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
-  }
-
-  for (let i = 1; i <= lastDay; i++) {
-    if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
-    ) {
-      days += `<div class="today">${i}</div>`;
-    } else {
-      days += `<div>${i}</div>`;
-    }
-  }
-
-  for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
-  }
-};
-
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
-
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
-
-renderCalendar();
-</script>
 <?php 
 }else{
      header("Location: index.php");
