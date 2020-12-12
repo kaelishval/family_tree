@@ -1,5 +1,5 @@
 .btn1 {
-  margin-left :10px;
+  margin-right: 50px;
   background-color: #872E1B; /* Green */
   border: none;
   color: white;
@@ -44,11 +44,11 @@
 #pk-member-details table {
     background: none repeat scroll 0 0 #FFFFFF;
     left: 34%;
-    padding: 30px;
     position: relative;
     top: 23%;
-    width: 461px;
-    box-shadow: 0 0 23px #4C4B4B;
+    width: 500px;
+    height: 300px;
+    /*box-shadow: 0 0 23px #4C4B4B;*/
 }
 #pk-member-details img{
     height: 114px;

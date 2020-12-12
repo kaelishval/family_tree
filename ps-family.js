@@ -446,16 +446,19 @@
         });
         $(memberDetails).empty();
         $(cross).appendTo(memberDetails);
-        content = content + '<center><button class="btn1 info">Info<button class="btn1 info">Info<button class="btn1 info">Info<tr><td>Name</td><td></button></button></button></center></td></tr>';
+        content = content + '<button class="btn1 info">Info<button class="btn1 info">Info<button class="btn1 info">Info<tr><td></td><td></button></button></button></td></tr>';
+        content = content + '<tr><td><hr></td><td></td></tr>';
         content = content + '<tr><td>Name</td><td>' + $(element).attr('data-name') + '</td></tr>';
         content = content + '<tr><td>Age</td><td>' + $(element).attr('data-age') + '</td></tr>';
         content = content + '<tr><td>Gender</td><td>' + $(element).attr('data-gender') + '</td></tr>';
+
         if ($(element).attr('data-relation')) {
             content = content + '<tr><td>Relation</td><td>' + $(element).attr('data-relation') + '</td></tr>';
         } else {
             content = content + '<tr><td>Relation</td><td>Self</td></tr>';
         }
-        content = content + '<tr><td colspan="2" style="text-align:center;"><img src="' + $(element).find('img').attr('src') + '"/></td></tr>';
+        content = content + '<tr><td colspan="2" style="text-align:center;"><img src="' + $(element).find('img').attr('src') + '"/></td>';
+        content = content + '<tr><td><hr></td><td></td></tr>';
         $(innerContent).html(content);
         $(memberDetails).append(innerContent);
         $(memberDetails).css('display', 'block');
