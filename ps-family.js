@@ -283,6 +283,32 @@
         memberAge = $('#pk-age').val();
         memberPic = $('#pk-picture');
         memberRelation = $('#pk-relation').val();
+        $.ajax({
+            type: 'GET',
+            url: '/family_tree/db_conn.php',
+            data: {
+                name:memberName,
+                gender:memberGender,
+                age:memberAge
+                // ,
+                // pic:memberPic,
+                // relation:memberRelation
+            },
+            success: function(data){
+                console.log(data);
+             },
+             error: function(xhr, status, error){
+                console.error(xhr);
+            }
+        });
+        
+        // window.location.href = "db_conn.php?name=" + memberName  + "&gender=" + memberGender + "&age=" + memberAge;
+
+        console.log(memberName);
+        console.log(memberGender);
+        console.log(memberAge);
+        console.log(memberPic);
+        console.log(memberRelation);
         //clear exsiting data from form
         $('#pk-name').val('');
         $('#pk-age').val('');
@@ -420,6 +446,7 @@
         });
         $(memberDetails).empty();
         $(cross).appendTo(memberDetails);
+        content = content + '<center><button class="btn1 info">Info<button class="btn1 info">Info<button class="btn1 info">Info<tr><td>Name</td><td></button></button></button></center></td></tr>';
         content = content + '<tr><td>Name</td><td>' + $(element).attr('data-name') + '</td></tr>';
         content = content + '<tr><td>Age</td><td>' + $(element).attr('data-age') + '</td></tr>';
         content = content + '<tr><td>Gender</td><td>' + $(element).attr('data-gender') + '</td></tr>';
