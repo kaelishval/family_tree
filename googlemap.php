@@ -89,7 +89,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <div id="googleMap" style="width:100%;height:500px;"></div>
+                <style>
+                    *{
+                        margin: 0;
+                        padding 0;
+
+                    }
+                    #map{
+                        height: 500px;
+                        width: 100%;
+                    }
+                    </style>
+                    <div id="map" ></div>
+                    <script>
+                        function initMap(){
+                            var location={lat:10.315699,lng:123.885437};
+                            var map = new google.maps.Map(document.getElementById("map"),{
+                                zoom:4,
+                                center: location
+                            });
+
+                        }
+                        
+                    </script>
+                    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgX_eQ-YB_2R74F9ZlbvYUQ8GSOrQPaAQ&callback=initMap"></script>
  <style>
          body
          {
@@ -232,21 +255,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
 
-<script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(9.952380,123.178864),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBepgdwxiDuH_noKSV8p_csRehN6J9qAZI&callback=myMap"></script>
-                </div>
-            </div>
-        </div>
- </div>
+
+
    <!-- Modal -->
     <div id="add_project" class="modal fade" role="dialog">
         <div class="modal-dialog">
