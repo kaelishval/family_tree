@@ -32,7 +32,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
                         <li class="active"><a href="googlemap.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
                         <li><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
-                        <li><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></l
+                        <li class="active"><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -51,9 +51,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </button>
                                 </div>
                             </nav>
-                            <!-- <div class="search hidden-xs hidden-sm">
+                            <div class="search hidden-xs hidden-sm">
                                 <input type="text" placeholder="Search" id="search">
-                            </div> -->
+                            </div>
                         </div>
                         <div class="col-md-5">
                             <div class="header-rightside">
@@ -89,7 +89,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                     </header>
                 </div>
                 <div class="user-dashboard">
-                    <div id="googleMap" style="width:100%;height:400px;"></div>
+                    <div id="googleMap" style="width:100%;height:500px;"></div>
  <style>
          body
          {
@@ -101,7 +101,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
           position: relative;
           width: 1200px;
           height: 300px;
-          margin: 240px auto;
+          margin: 10px auto;
           
       }
       .container .box{
@@ -246,12 +246,8 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                 </div>
             </div>
         </div>
-
-    </div>
-   
-
-
-    <!-- Modal -->
+ </div>
+   <!-- Modal -->
     <div id="add_project" class="modal fade" role="dialog">
         <div class="modal-dialog">
 
