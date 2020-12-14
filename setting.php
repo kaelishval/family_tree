@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HOME</title>
+	<title>SEED FAMILY TREE</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
