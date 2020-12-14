@@ -12,9 +12,14 @@ if (!$conn) {
 	echo "Connection failed!";
 }
 
-$memberName = $_GET['name'];
+	$memberFName = $_GET['fname'];
+	$memberMName = $_GET['mname'];
+	$memberLName = $_GET['lname'];
 	$memberGender = $_GET['gender'];
 	$memberAge = $_GET['age'];
+	$memberBirthday = $_GET['birthday'];
+	$memberContact = $_GET['contact'];
+	$memberRelation = $_GET['relation'];
 	// $memberPic = $_POST['pic']
 	// $memberRelation = $_POST['relation'];
 
@@ -23,7 +28,7 @@ $memberName = $_GET['name'];
 	// echo $memberName;
 	// echo $memberGender;
 	// echo $memberAge;
-	$sql = 'INSERT INTO members(memberName,memberGender,memberAge) VALUES("'.$memberName.'","'.$memberGender.'",'.$memberAge.')';
+	$sql = 'INSERT INTO members(memberFName,memberMName,memberLName,memberGender,memberAge,memberBirthday,memberContact,memberRelation) VALUES("'.$memberFName.'","'.$memberMName.'","'.$memberLName.'","'.$memberGender.'",'.$memberAge.',"'.$memberBirthday.'","'.$memberContact.'","'.$memberRelation.'")';
 
 	if(mysqli_query($conn, $sql)){
         echo "Records added successfully.";

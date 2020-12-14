@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2020 at 09:00 AM
+-- Generation Time: Dec 14, 2020 at 11:06 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -41,20 +41,15 @@ CREATE TABLE `events` (
 --
 
 CREATE TABLE `members` (
-  `memberName` varchar(50) NOT NULL,
+  `memberFName` varchar(50) NOT NULL,
+  `memberMName` varchar(50) NOT NULL,
+  `memberLName` varchar(50) NOT NULL,
   `memberGender` varchar(50) NOT NULL,
-  `memberAge` int(12) NOT NULL
+  `memberAge` int(12) NOT NULL,
+  `memberBirthday` varchar(50) NOT NULL,
+  `memberContact` int(12) NOT NULL,
+  `memberRelation` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `members`
---
-
-INSERT INTO `members` (`memberName`, `memberGender`, `memberAge`) VALUES
-('test', 'Male', 69),
-('test1', 'Male', 69),
-('test2', 'Male', 69),
-('test12', 'Male', 123);
 
 -- --------------------------------------------------------
 

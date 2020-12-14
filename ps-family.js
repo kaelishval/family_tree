@@ -10,10 +10,15 @@
     var treeGround = null;
     var newMemberForm = '';
     var memberName = '';
+    var memberFName = '';
+    var memberMName = '';
+    var memberLName = '';
     var memberGender = '';
     var memberAge = '';
     var memberPic = '';
     var memberRelation = '';
+    var memberBirthday = '';
+    var memberContact = '';
     var familyTree = new Array();
     var memberId = 0;
     var selectedMember = null;// refrence to selected member
@@ -86,10 +91,15 @@
             }
             if (i.indexOf("a") > -1 && i.length == 2) {
                 var link = $('<a>');
-                link.attr('data-name', obj[i].name);
+                link.attr('data-fname', obj[i].fname);
+                link.attr('data-mname', obj[i].mname);
+                link.attr('data-lname', obj[i].lname);
                 link.attr('data-age', obj[i].age);
                 link.attr('data-gender', obj[i].gender);
+                link.attr('data-birthday', obj[i].databirthday);
+                link.attr('data-contact', obj[i].datacontact);
                 link.attr('data-relation', obj[i].relation);
+              
 				if(obj[i].relation == 'Spouse'){
 					link.attr('class', 'spouse');
 				}
@@ -174,9 +184,13 @@
             $(root).children('a').each(function() {
                 var m = "a" + i;
                 item[m] = {};
-                item[m]["name"] = $(this).attr("data-name");
+                item[m]["fname"] = $(this).attr("data-fname");
+                item[m]["mname"] = $(this).attr("data-mname");
+                item[m]["lname"] = $(this).attr("data-lname");
                 item[m]["age"] = $(this).attr("data-age");
                 item[m]["gender"] = $(this).attr("data-gender");
+                item[m]["birthday"] = $(this).attr("data-birthday");
+                item[m]["contact"] = $(this).attr("data-contact");
                 try {
                     item[m]["relation"] = $(this).attr("data-relation");
                 } catch (e) {
@@ -246,9 +260,13 @@
         $(cross).appendTo(memberForm);
         var table = $('<table>').appendTo(memberForm);
         // name
-        $('<tr>').html('<td><label>Name</label></td><td><input type="text" value="" id="pk-name"/></td>').appendTo(table);
+        $('<tr>').html('<td><label>First Name</label></td><td><input type="text" placeholder="First Name" value="" id="pk-fname"/></td>').appendTo(table);
+        $('<tr>').html('<td><label>Middle Name</label></td><td><input type="text" placeholder="Middle Name" value="" id="pk-mname"/></td>').appendTo(table);
+        $('<tr>').html('<td><label>Last Name</label></td><td><input type="text" placeholder="Last Name" value="" id="pk-lname"/></td>').appendTo(table);
         $('<tr>').html(' <td><label>Gender</label></td><td><select id="pk-gender"><option value="Male">Male</option><option value="Female">Female</option></select></td>').appendTo(table);
         $('<tr>').html('<td><label>Age</label></td><td><input type="text" value="" id="pk-age"></td>').appendTo(table);
+        $('<tr>').html('<td><label>Birthday</label></td><td><input type="text" placeholder="Month-Date-Year" value="" id="pk-birthday"></td>').appendTo(table);
+        $('<tr>').html('<td><label>Birthday</label></td><td><input type="text" placeholder="09*********" value="" id="pk-contact"></td>').appendTo(table);
         $('<tr>').html(' <td class="relations"><label>Relation</label></td><td class="relations"><select id="pk-relation">\n\\n\
 <option value="Mother">Mother</option>\n\
 <option value="Father">Father</option>\n\\n\
@@ -278,21 +296,27 @@
     }
 
     function saveForm() {
-        memberName = $('#pk-name').val();
+        memberFName = $('#pk-fname').val();
+        memberMName = $('#pk-mname').val();
+        memberLName = $('#pk-lname').val();
         memberGender = $('#pk-gender').val();
         memberAge = $('#pk-age').val();
+        memberBirthday = $('#pk-birthday').val();
+        memberContact = $('#pk-contact').val();
         memberPic = $('#pk-picture');
         memberRelation = $('#pk-relation').val();
         $.ajax({
             type: 'GET',
             url: '/family_tree/db_conn.php',
             data: {
-                name:memberName,
+                fname:memberFName,
+                mname:memberMName,
+                lname:memberLName,
                 gender:memberGender,
-                age:memberAge
-                // ,
-                // pic:memberPic,
-                // relation:memberRelation
+                age:memberAge,
+                birthday:memberBirthday,
+                contact:memberContact,
+                relation:memberRelation
             },
             success: function(data){
                 console.log(data);
@@ -310,8 +334,12 @@
         console.log(memberPic);
         console.log(memberRelation);
         //clear exsiting data from form
-        $('#pk-name').val('');
+        $('#pk-fname').val('');
+        $('#pk-mname').val('');
+        $('#pk-lname').val('');
         $('#pk-age').val('');
+        $('#pk-birthday').val('');
+        $('#pk-contact').val('');
         $('#pk-relation').val('');
         // after saving
         addMember();
@@ -365,13 +393,17 @@
         }
         $(pic).appendTo(center);
         $(center).append($('<br>'));
-        $('<span>').html(memberName + " " + extraData).appendTo(center);
+        $('<span>').html(memberFName + " " + memberLName + " " + extraData).appendTo(center);
         readImage(memberPic, pic);
 
         var li = $('<li>').append(aLink);
-        $(aLink).attr('data-name', memberName);
+        $(aLink).attr('data-fname', memberFName);
+        $(aLink).attr('data-mname', memberMName);
+        $(aLink).attr('data-lname', memberLName);
         $(aLink).attr('data-gender', memberGender);
         $(aLink).attr('data-age', memberAge);
+        $(aLink).attr('data-birthday', memberBirthday);
+        $(aLink).attr('data-contact', memberContact);
         $(aLink).attr('data-relation', memberRelation);
         $(aLink).mousedown(function(event) {
             if (event.button == 2) {
@@ -448,8 +480,12 @@
         $(cross).appendTo(memberDetails);
         content = content + '<button class="btn1 info">Info<button class="btn1 info">Info<button class="btn1 info">Info<tr><td></td><td></button></button></button></td></tr>';
         content = content + '<tr><td><hr></td><td></td></tr>';
-        content = content + '<tr><td>Name</td><td>' + $(element).attr('data-name') + '</td></tr>';
+        content = content + '<tr><td>First Name</td><td>' + $(element).attr('data-fname') + '</td></tr>';
+        content = content + '<tr><td>Middle Name</td><td>' + $(element).attr('data-mname') + '</td></tr>';
+        content = content + '<tr><td>Last Name</td><td>' + $(element).attr('data-lname') + '</td></tr>';
         content = content + '<tr><td>Age</td><td>' + $(element).attr('data-age') + '</td></tr>';
+        content = content + '<tr><td>Birthday</td><td>' + $(element).attr('data-birthday') + '</td></tr>';
+        content = content + '<tr><td>Contact Number</td><td>' + $(element).attr('data-contact') + '</td></tr>';
         content = content + '<tr><td>Gender</td><td>' + $(element).attr('data-gender') + '</td></tr>';
 
         if ($(element).attr('data-relation')) {
