@@ -3,6 +3,15 @@
 <head>
 	<title>LOGIN"</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
+	<style>
+	img {
+    padding-top: 10px;
+	height: 300px;
+	/* text-align: 90px; */
+	padding-left: 130px;
+}
+</style>
 </head>
 <body>
      <form action="login.php" method="post">
