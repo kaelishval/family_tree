@@ -90,6 +90,147 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 </div>
                 <div class="user-dashboard">
                     <div id="googleMap" style="width:100%;height:400px;"></div>
+ <style>
+         body
+         {
+             margin: 0;
+             padding: 0;
+             font-family:
+         }              
+      .container{
+          position: relative;
+          width: 1200px;
+          height: 300px;
+          margin: 240px auto;
+          
+      }
+      .container .box{
+          position: relative;
+          width: calc(350px - 30px);
+          height: calc(350px - 30px);
+          background: #000;
+          float: left;
+          margin: 15px;
+          box-sizing: border-box;
+          overflow: hidden;
+          border-radius: 10px;
+      }
+      .container .box .icon{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #f00;
+          transition: 0.5s;
+          z-index: 1 ;
+      }
+      .container .box:hover .icon{
+          top: 20px;
+          left: calc(50% - 40px);
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+      }
+      .container .box .icon .fa{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          font-size: 80px;
+          transition: 0.5s;
+          color: #fff;
+      }
+      .container .box:hover .icon .fa{
+        font-size: 40px;
+      }
+      .container .box .content{
+        position: absolute; 
+        top: 100%;
+        height: calc(100% - 100px);
+        text-align:center;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: 0.5s;
+        opacity: 0;
+      }
+      .container .box:hover .content{
+        top: 100px;
+        opacity: 1; 
+      }
+      .container .box .content h3{
+          margin: 0 0 10px;
+          padding: 0;
+          color: #fff;
+          font-size: 24px;
+      }
+      .container .box .content p{
+        margin: 0;
+          padding: 0;
+          color: #fff;
+          
+      }
+      .container .box:nth-child(1) .icon{
+            background: #319635;
+      }
+      .container .box:nth-child(1){
+            background: #4caf50;
+      } 
+      .container .box:nth-child(2) .icon{
+            background: #d03852;
+      }
+      .container .box:nth-child(2){
+            background: #f54967;
+      } 
+      .container .box:nth-child(3) .icon{
+            background: #23798e;
+      }
+      .container .box:nth-child(3){
+            background: #328fa5;
+      } 
+
+
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class=icon> 
+                <i class="fa fa-bar-chart" aria-hidden="true"> </i>
+            </div>
+            <div class="content">
+                <h3>Stats</h3>
+                <i class="fa fa-user" aria-hidden="true">100</i><br>
+                <i class="fa fa-mars" aria-hidden="true">50</i><br>
+                <i class="fa fa-venus" aria-hidden="true">50</i>
+            </div>
+        </div> 
+        <div class="box">
+            <div class=icon> 
+                <i class="fa fa-search" aria-hidden="true"> </i>
+            </div>
+            <div class="content">
+                <h3>Info</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos. </p>
+            </div>
+        </div>  
+        <div class="box">
+            <div class=icon> 
+                <i class="fa fa-clone" aria-hidden="true"> </i>
+            </div>
+            <div class="content">
+                <h3>History</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+            </div>
+        </div>    
+       
+</body>
+
+
+
+
+
+
 
 <script>
 function myMap() {
@@ -107,7 +248,7 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
         </div>
 
     </div>
-
+   
 
 
     <!-- Modal -->
