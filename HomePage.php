@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOME</title>
+    <title>SEED FAMILY TREE</title>
     <link rel="stylesheet" type="text/css" href="style.css">
      <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width"/>
