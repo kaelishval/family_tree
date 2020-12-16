@@ -1,46 +1,63 @@
-<?php 
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
- ?>
-<!DOCT
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>Jquery plugin for family tree</title>
+        <title>SEED: A FAMILY TREE</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="jquery-ui.css"/>
-        <script src="jquery-1.11.0.js"></script>
-        <script src="jquery-ui.js"></script>
-        <script src="ps-family.js"></script>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
+        <style>
+        body,h1 {font-family: "Raleway", sans-serif}
+        body, html {height: 100%}
+        .bgimg {
+          background-image: url('assets/family.jpg');
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+        }
+        h3{
+          color: black;
+          font-family: "Raleway"
+        }
+        p{
+          color: black;
+        }
+        .navbar {
+        background-color: transparent;
+        border:none;
+        }
+    </style>
     </head>
     <body>
-        <input type="button" id="sendData" value="send data" onclick="$.send_Family({url: 'save_family.php'})"/>
-        <div id="pk-family-tree">
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid"></div>
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">SEED</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="w3-display-middle">
+          <h3 class="w3-jumbo w3-animate-top">CONNECT FAMILY</h3>
+          <hr class="w3-border-grey" style="margin:auto;width:40%">
+          <p class="w3-large w3-center">create your family tree</p>
+          <p class="w3-large w3-center">Track your family members</p>
         </div>
-        <script>
-            $('#pk-family-tree').pk_family();
-          /*  $('#pk-family-tree').pk_family_create(
-             {
-             data: '{"li0":{"a0":{"name":"1","age":"wewe","gender":"Male","pic":"images/profile.png"},"a1":{"name":"2","age":"23","gender":"Female","relation":"Spouse","pic":"images/profile-f.png"},"ul":{"li0":{"a0":{"name":"3","age":"34","gender":"Male","relation":"Child","pic":"images/profile.png"}},"li1":{"a0":{"name":"4","age":"34","gender":"Female","relation":"Child","pic":"images/profile-f.png"}}}}}'
-             }
-             );*/
-           
-        </script>
+      
+      
+      
     </body>
 </html>
-
-<?php 
-}else{
-     header("Location: index.php");
-     exit();
-}
- ?>

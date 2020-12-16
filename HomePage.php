@@ -16,6 +16,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
         <script src="jquery-ui.js"></script>
         <script src="ps-family.js"></script>
         <link rel="stylesheet" href="treestyle.css"/>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
 </head>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>

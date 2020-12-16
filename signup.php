@@ -3,6 +3,7 @@
 <head>
 	<title>SIGN UP</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+     <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
 </head>
 <body>
      <form action="signup-check.php" method="post">
