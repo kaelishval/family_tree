@@ -266,7 +266,7 @@
         $('<tr>').html(' <td><label>Gender</label></td><td><select id="pk-gender"><option value="Male">Male</option><option value="Female">Female</option></select></td>').appendTo(table);
         $('<tr>').html('<td><label>Age</label></td><td><input type="text" value="" id="pk-age"></td>').appendTo(table);
         $('<tr>').html('<td><label>Birthday</label></td><td><input type="text" placeholder="Month-Date-Year" value="" id="pk-birthday"></td>').appendTo(table);
-        $('<tr>').html('<td><label>Birthday</label></td><td><input type="text" placeholder="09*********" value="" id="pk-contact"></td>').appendTo(table);
+        $('<tr>').html('<td><label>Contact Number</label></td><td><input type="text" placeholder="09*********" value="" id="pk-contact"></td>').appendTo(table);
         $('<tr>').html(' <td class="relations"><label>Relation</label></td><td class="relations"><select id="pk-relation">\n\\n\
 <option value="Mother">Mother</option>\n\
 <option value="Father">Father</option>\n\\n\

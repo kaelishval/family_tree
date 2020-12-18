@@ -1,9 +1,30 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
- ?>
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM `members` WHERE CONCAT('memberName`, `memberGender`, `memberAge`, ) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+    
+}
+ else {
+    $query = "SELECT * FROM `members`";
+    $search_result = filterTable($query);
+}
+
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "family");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +81,80 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-me-12 mt-4">
+                                    <div class="card">
+                                        <div class="card-hearder">
+                                            <h4 class="card-tittle">Search Here</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action="" method="post">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="filter_value" class="form-control" placeholder="Search Records">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="submit" name="filter_btn" class="btn btn-primary">Search</button>
+                                                </div>
+                                            </div>
+                                            </form>
+                                            <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                        <th scope="col">First Name</th>
+                                                        <th scope="col">Middle Name</th>
+                                                        <th scope="col">Last Name</th>
+                                                        <th scope="col">Age</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <?php
+                                                    $connection = mysqli_connect("localhost","root","","family");
+                                                    if(isset($_POST['filter_btn']))
+                                                    {
+
+                                                            $value_filter = $_POST['filter_value'];
+                                                            $query = "SELECT * FROM members WHERE CONCAT(memberFName,memberMName,memberLName,memberAge) LIKE '%$value_filter%'";
+                                                            $query_run = mysqli_query($connection, $query); 
+
+                                                            if(mysqli_num_rows($query_run) > 0)
+                                                            {
+                                                                while($row = mysqli_fetch_array($query_run))
+                                                                {
+                                                                    ?>
+                                                                    <tr>
+                                                                    <td><?php echo $row['memberFName'];?></td>
+                                                                    <td><?php echo $row['memberMName'];?></td>
+                                                                    <td><?php echo $row['memberLName'];?></td>
+                                                                    <td><?php echo $row['memberAge'];?></td>
+                                                                    </tr>
+                                                                    <?php
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                ?>
+                                                                 <tr>
+                                                                    <td colspan="4">No Record Found</td>
+                                                                 </tr>
+                                                                <?php
+                                                            }
+                                                        }
+
+                                                    ?>
+                                                    </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+   
+            
+                                
                             </div>
                         </div>
                         
@@ -126,11 +220,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 
     <!-- Modal -->
-    <div id="add_project" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+    <!-- <div id="add_project" class="modal fade" role="dialog">
+        <div class="modal-dialog"> -->
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <!-- <div class="modal-content">
                 <div class="modal-header login-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
                     <h4 class="modal-title">Add Project</h4>
@@ -148,14 +242,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
             </div>
 
         </div>
-    </div>
+    </div> -->
+    
 
 </body>
 </html>
-
-<?php 
-}else{
-     header("Location: index.php");
-     exit();
-}
- ?>
