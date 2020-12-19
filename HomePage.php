@@ -108,6 +108,9 @@ function filterTable($query)
                                                         <th scope="col">Middle Name</th>
                                                         <th scope="col">Last Name</th>
                                                         <th scope="col">Age</th>
+                                                        <th scope="col">Gender</th>
+                                                        <th scope="col">Birthday</th>
+                                                        <th scope="col">Contact</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -117,7 +120,7 @@ function filterTable($query)
                                                     {
 
                                                             $value_filter = $_POST['filter_value'];
-                                                            $query = "SELECT * FROM members WHERE CONCAT(memberFName,memberMName,memberLName,memberAge) LIKE '%$value_filter%'";
+                                                            $query = "SELECT * FROM members WHERE CONCAT(memberFName,memberMName,memberLName,memberAge,memberGender,memberBirthday,memberContact) LIKE '%$value_filter%'";
                                                             $query_run = mysqli_query($connection, $query); 
 
                                                             if(mysqli_num_rows($query_run) > 0)
@@ -130,6 +133,9 @@ function filterTable($query)
                                                                     <td><?php echo $row['memberMName'];?></td>
                                                                     <td><?php echo $row['memberLName'];?></td>
                                                                     <td><?php echo $row['memberAge'];?></td>
+                                                                    <td><?php echo $row['memberGender'];?></td>
+                                                                    <td><?php echo $row['memberBirthday'];?></td>
+                                                                    <td><?php echo $row['memberContact'];?></td>
                                                                     </tr>
                                                                     <?php
                                                                 }
@@ -138,7 +144,7 @@ function filterTable($query)
                                                             {
                                                                 ?>
                                                                  <tr>
-                                                                    <td colspan="4">No Record Found</td>
+                                                                    <td colspan="7">No Record Found</td>
                                                                  </tr>
                                                                 <?php
                                                             }
@@ -196,15 +202,19 @@ function filterTable($query)
                 
                 <div class="user-dashboard">
                         <!--  <input type="button" id="sendData" value="send data" onclick="$.send_Family({url: 'save_family.php'})"/> -->
-        <div id="pk-family-tree">
+        <!-- <div id="pk-family-tree"> -->
+        <button type="button" onclick="myFunction()">Add Tree</button>
         </div>
         <script>
+        
             $('#pk-family-tree').pk_family();
           /*  $('#pk-family-tree').pk_family_create(
              {
              data: '{"li0":{"a0":{"name":"1","age":"wewe","gender":"Male","pic":"images/profile.png"},"a1":{"name":"2","age":"23","gender":"Female","relation":"Spouse","pic":"images/profile-f.png"},"ul":{"li0":{"a0":{"name":"3","age":"34","gender":"Male","relation":"Child","pic":"images/profile.png"}},"li1":{"a0":{"name":"4","age":"34","gender":"Female","relation":"Child","pic":"images/profile-f.png"}}}}}'
              }
              );*/
+             function myFunction() {
+            document.getElementById("pk-family-tree").innerHTML
            
         </script>
                     </div>
