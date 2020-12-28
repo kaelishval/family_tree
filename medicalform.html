@@ -4,9 +4,363 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="medicalform.css"/>
+    <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.22494">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f30e2a790832f3e96009402">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_styles.css?3.3.22494">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/payment/payment_feature.css?3.3.22494">
     <title>Medical Form</title>
 </head>
 <body>
-    
+    <form class="jotform-form" action="#" method="post" name="#" id="#" accept-charset="utf-8" autocomplete="on" novalidate="true">
+        <div role="main" class="form-all">
+          <ul class="form-section page-section">
+            <li id="cid_1" class="form-input-wide" data-type="control_head">
+              <div class="form-header-group  header-large">
+                <div class="header-text httal htvam">
+                  <h1 id="header_1" class="form-header" data-component="header">
+                    Medical History
+                  </h1>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_fullname" id="id_3">
+              <label class="form-label form-label-top form-label-auto" id="label_3" for="first_3">
+                Full Name
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_3" class="form-input-wide jf-required" data-layout="full">
+                <div data-wrapper-react="true">
+                  <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                    <input type="text" id="first_3" name="q3_fullName3[first]" class="form-textbox validate[required]" size="10" value="" data-component="first" aria-labelledby="label_3 sublabel_3_first" required="">
+                    <label class="form-sub-label" for="first_3" id="sublabel_3_first" style="min-height:13px" aria-hidden="false" required> First Name </label>
+                  </span>
+                  <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                    <input type="text" id="last_3" name="q3_fullName3[last]" class="form-textbox validate[required]" size="15" value="" data-component="last" aria-labelledby="label_3 sublabel_3_last" required="">
+                    <label class="form-sub-label" for="last_3" id="sublabel_3_last" style="min-height:13px" aria-hidden="false" required> Last Name </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_phone" id="id_4">
+              <label class="form-label form-label-top form-label-auto" id="label_4" for="input_4_full" required>
+                Phone Number
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_4" class="form-input-wide jf-required" data-layout="half">
+                <span class="form-sub-label-container" style="vertical-align:top">
+                  <input type="tel" id="input_4_full" name="q4_phoneNumber4[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[required, Fill Mask]" style="width:310px" data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone" aria-labelledby="label_4" required="" im-insert="true" maskvalue="(###) ###-####">
+                  <label class="form-sub-label is-empty" for="input_4_full" id="sublabel_4_masked" style="min-height:13px" aria-hidden="false">  </label>
+                </span>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_checkbox" id="id_5">
+              <label class="form-label form-label-top" id="label_5" for="input_5" required>
+                Check the conditions that apply to you or to any members of your immediate relatives:
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_5" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-single-column" role="group" aria-labelledby="label_5" data-component="checkbox">
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_0" name="q5_checkThe5[]" value="Asthma" required="">
+                    <label id="label_input_5_0" for="input_5_0"> Asthma </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_1" name="q5_checkThe5[]" value="Cancer" required="">
+                    <label id="label_input_5_1" for="input_5_1"> Cancer </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_2" name="q5_checkThe5[]" value="Cardiac disease" required="">
+                    <label id="label_input_5_2" for="input_5_2"> Cardiac disease </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_3" name="q5_checkThe5[]" value="Diabetes" required="">
+                    <label id="label_input_5_3" for="input_5_3"> Diabetes </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_4" name="q5_checkThe5[]" value="Hypertension" required="">
+                    <label id="label_input_5_4" for="input_5_4"> Hypertension </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_5" name="q5_checkThe5[]" value="Psychiatric disorder" required="">
+                    <label id="label_input_5_5" for="input_5_5"> Psychiatric disorder </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_5_6" name="q5_checkThe5[]" value="Epilepsy" required="">
+                    <label id="label_input_5_6" for="input_5_6"> Epilepsy </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_checkbox" id="id_6">
+              <label class="form-label form-label-top" id="label_6" for="input_6" required>
+                Check the symptoms that you're currently experiencing:
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_6" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-single-column" role="group" aria-labelledby="label_6" data-component="checkbox" >
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_0" name="q6_checkThe6[]" value="Chest pain" required="">
+                    <label id="label_input_6_0" for="input_6_0"> Chest pain </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_1" name="q6_checkThe6[]" value="Respiratory" required="">
+                    <label id="label_input_6_1" for="input_6_1"> Respiratory </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_2" name="q6_checkThe6[]" value="Cardiac disease" required="">
+                    <label id="label_input_6_2" for="input_6_2"> Cardiac disease </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_3" name="q6_checkThe6[]" value="Cardiovascular" required="">
+                    <label id="label_input_6_3" for="input_6_3"> Cardiovascular </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_4" name="q6_checkThe6[]" value="Hematological" required="">
+                    <label id="label_input_6_4" for="input_6_4"> Hematological </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_5" name="q6_checkThe6[]" value="Lymphatic" required="">
+                    <label id="label_input_6_5" for="input_6_5"> Lymphatic </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_6" name="q6_checkThe6[]" value="Neurological" required="">
+                    <label id="label_input_6_6" for="input_6_6"> Neurological </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_7" name="q6_checkThe6[]" value="Psychiatric" required="">
+                    <label id="label_input_6_7" for="input_6_7"> Psychiatric </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_8" name="q6_checkThe6[]" value="Gastrointestinal" required="">
+                    <label id="label_input_6_8" for="input_6_8"> Gastrointestinal </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_9" name="q6_checkThe6[]" value="Genitourinary" required="">
+                    <label id="label_input_6_9" for="input_6_9"> Genitourinary </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_10" name="q6_checkThe6[]" value="Weight gain" required="">
+                    <label id="label_input_6_10" for="input_6_10"> Weight gain </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_11" name="q6_checkThe6[]" value="Weight loss" required="">
+                    <label id="label_input_6_11" for="input_6_11"> Weight loss </label>
+                  </span>
+                  <span class="form-checkbox-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="checkbox" class="form-checkbox validate[required]" id="input_6_12" name="q6_checkThe6[]" value="Musculoskeletal" required="">
+                    <label id="label_input_6_12" for="input_6_12"> Musculoskeletal </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_radio" id="id_7">
+              <label class="form-label form-label-top" id="label_7" for="input_7" required>
+                Are you currently taking any medication?
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_7" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-single-column" role="group" aria-labelledby="label_7" data-component="radio">
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_7_0" name="q7_areYou" value="Yes" required="">
+                    <label id="label_input_7_0" for="input_7_0"> Yes </label>
+                  </span>
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_7_1" name="q7_areYou" value="No" required="">
+                    <label id="label_input_7_1" for="input_7_1"> No </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_radio" id="id_8">
+              <label class="form-label form-label-top" id="label_8" for="input_8">
+                Do you have any medication allergies?
+                <span class="form-required" required>
+                  *
+                </span>
+              </label>
+              <div id="cid_8" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-single-column" role="group" aria-labelledby="label_8" data-component="radio">
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_8_0" name="q8_doYou" value="Yes" required="">
+                    <label id="label_input_8_0" for="input_8_0"> Yes </label>
+                  </span>
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_8_1" name="q8_doYou" value="No" required="">
+                    <label id="label_input_8_1" for="input_8_1"> No </label>
+                  </span>
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_8_2" name="q8_doYou" value="Not Sure" required="">
+                    <label id="label_input_8_2" for="input_8_2"> Not Sure </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_radio" id="id_9">
+              <label class="form-label form-label-top" id="label_9" for="input_9" required>
+                What is your Gender?
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_9" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-single-column" role="group" aria-labelledby="label_9" data-component="radio">
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_9_0" name="q9_whatIs" value="Male" required="">
+                    <label id="label_input_9_0" for="input_9_0"> Male </label>
+                  </span>
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_9_1" name="q9_whatIs" value="Female" required="">
+                    <label id="label_input_9_1" for="input_9_1"> Female </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_10">
+              <label class="form-label form-label-top" id="label_10" for="input_10" required>
+                Do you use or do you have history of using tobacco?
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_10" class="form-input-wide jf-required" data-layout="half">
+                <select class="form-dropdown validate[required] is-active" id="input_10" name="q10_doYou10" style="width:310px" data-component="dropdown" required="" aria-labelledby="label_10" required>
+                  <option value=""> Please Select </option>
+                  <option value="Yes"> Yes </option>
+                  <option selected="" value="No"> No </option>
+                </select>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_dropdown" id="id_11">
+              <label class="form-label form-label-top" id="label_11" for="input_11" required>
+                Do you use or do you have history of using illegal drugs?
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_11" class="form-input-wide jf-required" data-layout="half">
+                <select class="form-dropdown validate[required] is-active" id="input_11" name="q11_doYou11" style="width:310px" data-component="dropdown" required="" aria-labelledby="label_11" required>
+                  <option value=""> Please Select </option>
+                  <option value="Yes"> Yes </option>
+                  <option selected="" value="No"> No </option>
+                </select>
+              </div>
+            </li>
+            <li class="form-line jf-required" data-type="control_radio" id="id_12">
+              <label class="form-label form-label-top" id="label_12" for="input_12" required>
+                How often do you consume alcohol?
+                <span class="form-required">
+                  *
+                </span>
+              </label>
+              <div id="cid_12" class="form-input-wide jf-required" data-layout="full">
+                <div class="form-multiple-column" data-columncount="3" role="group" aria-labelledby="label_12" data-component="radio" required>
+                  <span class="form-radio-item">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_12_0" name="q12_howOften" value="Daily" required="">
+                    <label id="label_input_12_0" for="input_12_0"> Daily </label>
+                  </span>
+                  <span class="form-radio-item">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_12_1" name="q12_howOften" value="Weekly" required="">
+                    <label id="label_input_12_1" for="input_12_1"> Weekly </label>
+                  </span>
+                  <span class="form-radio-item">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_12_2" name="q12_howOften" value="Monthly" required="">
+                    <label id="label_input_12_2" for="input_12_2"> Monthly </label>
+                  </span>
+                  <span class="form-radio-item" style="clear:left">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_12_3" name="q12_howOften" value="Occasionally" required="">
+                    <label id="label_input_12_3" for="input_12_3"> Occasionally </label>
+                  </span>
+                  <span class="form-radio-item">
+                    <span class="dragger-item">
+                    </span>
+                    <input type="radio" class="form-radio validate[required]" id="input_12_4" name="q12_howOften" value="Never" required="">
+                    <label id="label_input_12_4" for="input_12_4"> Never </label>
+                  </span>
+                </div>
+              </div>
+            </li>
+            <li class="form-line" data-type="control_button" id="id_2">
+              <div id="cid_2" class="form-input-wide" data-layout="full">
+                <div data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
+                  <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </li>
+        
 </body>
 </html>

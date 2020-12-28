@@ -203,19 +203,21 @@ function filterTable($query)
                 <div class="user-dashboard">
                         <!--  <input type="button" id="sendData" value="send data" onclick="$.send_Family({url: 'save_family.php'})"/> -->
         <!-- <div id="pk-family-tree"> -->
-        <button type="button" onclick="myFunction()">Add Tree</button>
+        <button type="submit">Add Profile</button>
         </div>
         <script>
-        
-            $('#pk-family-tree').pk_family();
-          /*  $('#pk-family-tree').pk_family_create(
-             {
-             data: '{"li0":{"a0":{"name":"1","age":"wewe","gender":"Male","pic":"images/profile.png"},"a1":{"name":"2","age":"23","gender":"Female","relation":"Spouse","pic":"images/profile-f.png"},"ul":{"li0":{"a0":{"name":"3","age":"34","gender":"Male","relation":"Child","pic":"images/profile.png"}},"li1":{"a0":{"name":"4","age":"34","gender":"Female","relation":"Child","pic":"images/profile-f.png"}}}}}'
-             }
-             );*/
-             function myFunction() {
-            document.getElementById("pk-family-tree").innerHTML
-           
+        $(document).ready(function(){
+    $("form").on("submit", function(event){
+        event.preventDefault();
+ 
+        var formValues= $(this).serialize();
+ 
+        $.post("HomePage.php", formValues, function(data){
+            // Display the returned data in browser
+            $("#result").html(data);
+        });
+    });
+});
         </script>
                     </div>
                 </div>
