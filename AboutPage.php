@@ -1,4 +1,9 @@
+<?php 
+session_start();
 
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,14 +27,11 @@
                 </div>
                 <div class="navi">
                     <ul>
-                        <li><a href="HomePage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <!-- <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li> -->
-                        <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
-                        <li><a href="googlemap.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
-                        <!-- <li><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li> -->
-                        <li class="active"><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
-                        <!-- <li class="active"><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li> -->
-                        <li><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
+                       <li ><a href="SearchPage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Search</span></a></li>
+                        <li ><a href="FamilyTreePage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Family Tree</span></a></li>
+                        <li><a href="GoogleMapPage.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
+                        <li ><a href="CalendarPage.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
+                        <li class="active"><a href="AboutPage.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -91,113 +93,85 @@
 	<title>Our Team Section</title>
 	<link rel="stylesheet" href="styles1.css">
 </head>
- <head>
-  <title>SEED FAMILY TREE EVENT CALENDAR</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
-  <script>
-   
-  $(document).ready(function() {
-   var calendar = $('#calendar').fullCalendar({
-    editable:true,
-    header:{
-     left:'prev,next today',
-     center:'title',
-     right:'month,agendaWeek,agendaDay'
-    },
-    events: 'load.php',
-    selectable:true,
-    selectHelper:true,
-    select: function(start, end, allDay)
-    {
-     var title = prompt("Enter Event Title");
-     if(title)
-     {
-      var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-      var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-      $.ajax({
-       url:"insert.php",
-       type:"POST",
-       data:{title:title, start:start, end:end},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Added Successfully");
-       }
-      })
-     }
-    },
-    editable:true,
-    eventResize:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function(){
-       calendar.fullCalendar('refetchEvents');
-       alert('Event Update');
-      }
-     })
-    },
+<body>
 
-    eventDrop:function(event)
-    {
-     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
-     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
-     var title = event.title;
-     var id = event.id;
-     $.ajax({
-      url:"update.php",
-      type:"POST",
-      data:{title:title, start:start, end:end, id:id},
-      success:function()
-      {
-       calendar.fullCalendar('refetchEvents');
-       alert("Event Updated");
-      }
-     });
-    },
-
-    eventClick:function(event)
-    {
-     if(confirm("Are you sure you want to remove it?"))
-     {
-      var id = event.id;
-      $.ajax({
-       url:"delete.php",
-       type:"POST",
-       data:{id:id},
-       success:function()
-       {
-        calendar.fullCalendar('refetchEvents');
-        alert("Event Removed");
-       }
-      })
-     }
-    },
-
-   });
-  });
-   function goBack() {
-     window.history.back()
-   } 
-  </script>
- </head>
- 
- <body>
-  <div class="container">
-    <!-- <button onclick="goBack()">Back to Home</button> -->
-    <hr>
-   <div id="calendar"></div>
+<div class="wrapper">
+  <h1>Our Team</h1>
+  <div class="team">
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/kael.jpg" alt="Team_image">
+      </div>
+      <h3>Karl Michael Mauro</h3>
+      <p class="role">UI developer</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+    </div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/louis.png" alt="Team_image">
+      </div>
+      <h3>Louis Arcilla</h3>
+      <p class="role">Tester</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/van.jpg" alt="Team_image">
+      </div>
+      <h3>Van Coke Velasquez</h3>
+      <p class="role">Support Lead</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+    </div>
+    <div class="team_member">
+      <div class="team_img">
+        <img src="images/tope.png" alt="Team_image">
+      </div>
+      <h3>Christoph Carreon</h3>
+      <p class="role">CEO</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p></div>
   </div>
- </body>
+</div>	
+
+</body>
 </html>
+                </div><!-- asdasd -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div id="add_project" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header login-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Add Project</h4>
+                </div>
+                <div class="modal-body">
+                            <input type="text" placeholder="Project Title" name="name">
+                            <input type="text" placeholder="Post of Post" name="mail">
+                            <input type="text" placeholder="Author" name="passsword">
+                            <textarea placeholder="Desicrption"></textarea>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="add-project" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<?php 
+}else{
+     header("Location: index.php");
+     exit();
+}
+ ?>

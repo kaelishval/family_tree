@@ -56,12 +56,11 @@ function filterTable($query)
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="HomePage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
-                        <!-- <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Workflow</span></a></li> -->
-                        <!-- <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Statistics</span></a></li> -->
-                        <li><a href="googlemap.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
-                        <li><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
-                        <li><a href="setting.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
+                        <li class="active"><a href="SearchPage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Search</span></a></li>
+                        <li><a href="FamilyTreePage.php"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Family Tree</span></a></li>
+                        <li><a href="GoogleMapPage.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Google Map</span></a></li>
+                        <li><a href="CalendarPage.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
+                        <li><a href="AboutPage.php"><i class="fa fa-info" aria-hidden="true"></i><span class="hidden-xs hidden-sm">About</span></a></li>
                     </ul>
                 </div>
             </div>
