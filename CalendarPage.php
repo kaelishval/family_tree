@@ -16,7 +16,7 @@
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a href="home.html"><img src="assets/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
+                    <a href="javascript:window.location.href=window.location.href"><img src="assets/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
                         <img src="assets/logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
                     </a>
                 </div>
