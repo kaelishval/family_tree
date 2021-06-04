@@ -1,3 +1,4 @@
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php 
 session_start(); 
 include "db_conn.php";
@@ -35,7 +36,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: HomePage.php");
+            	header("Location: AboutPage.php");
+				swal("Hello World");
 		        exit();
             }else{
 				header("Location: loginpage.php?error=Incorect User name or password");

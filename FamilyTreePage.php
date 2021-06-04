@@ -101,7 +101,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 
                 <div class="user-dashboard">
                         <!--  <input type="button" id="sendData" value="send data" onclick="$.send_Family({url: 'save_family.php'})"/> -->
-        <div id="pk-family-tree">
+        <div id="pk-family-tree" style="height: 850px;
+        width: 1550px;">
+            
         </div>
         <script>
             $('#pk-family-tree').pk_family();
