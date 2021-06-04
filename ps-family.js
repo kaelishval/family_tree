@@ -268,12 +268,12 @@
         $('<tr>').html('<td><label>Birthday</label></td><td><input type="text" placeholder="Month-Date-Year" value="" id="pk-birthday"></td>').appendTo(table);
         $('<tr>').html('<td><label>Contact Number</label></td><td><input type="text" placeholder="09*********" value="" id="pk-contact"></td>').appendTo(table);
         $('<tr>').html(' <td class="relations"><label>Relation</label></td><td class="relations"><select id="pk-relation">\n\\n\
-<option value="Mother">Mother</option>\n\
-<option value="Father">Father</option>\n\\n\
-<option value="Sibling">Sibling</option>\n\\n\
-<option value="Child">Child</option>\n\\n\
-<option value="Spouse">Spouse</option>\n\\n\
-</select></td>').appendTo(table);
+        <option value="Mother">Mother</option>\n\
+        <option value="Father">Father</option>\n\\n\
+        <option value="Sibling">Sibling</option>\n\\n\
+        <option value="Child">Child</option>\n\\n\
+        <option value="Spouse">Spouse</option>\n\\n\
+        </select></td>').appendTo(table);
         $('<tr>').html('<td><label>Upload Photo</label></td><td><input type="file" id="pk-picture"></td>').appendTo(table);
         var buttonSave = $('<input>').attr('type', 'button');
         $(buttonSave).attr('value', 'Save');
