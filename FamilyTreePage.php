@@ -58,9 +58,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     </button>
                                 </div>
                             </nav>
-                            <div class="search hidden-xs hidden-sm">
-                                <input type="text" placeholder="Search" id="search">
-                            </div>
+                            
                         </div>
                         
                         <div class="col-md-5">
@@ -72,7 +70,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                     <li>
                                         <a href="#" class="icon-info">
                                             <i class="fa fa-bell" aria-hidden="true"></i>
-                                            <span class="label label-primary">3123</span>
+                                            <span class="label label-primary">3</span>
                                         </a>
                                     </li>
                                     <li class="dropdown">
